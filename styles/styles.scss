@@ -1,0 +1,254 @@
+@import "./variables";
+@import "./mixins";
+@import "./reset";
+
+header {
+  width: 100%;
+  min-height: 100px;
+  padding: 35px 165px 97px 165px;
+  background-color: $black;
+
+  @media (max-width: 700px) {
+    padding: 33px 24px 33px 24px;
+  }
+
+  nav {
+    @include flex(row, space-between, center);
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+  }
+  #burger {
+    display: none;
+    @media (max-width: 700px) {
+      display: inline-block;
+    }
+  }
+
+  ul {
+    @include flex();
+    gap: 34px;
+    list-style: none;
+    @media (max-width: 700px) {
+      display: none;
+    }
+
+    li {
+      a {
+        text-decoration: none;
+        @include p($white);
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  h1 {
+    @include h1($white, 40px);
+    margin-top: 98px;
+    text-align: center;
+    @media (max-width: 700px) {
+      margin-top: 32px;
+    }
+  }
+}
+main {
+  padding: 160px 165px 150px 165px;
+  background-color: $light-grey;
+
+  @media (max-width: 700px) {
+    padding: 65px 25px 119px 25px;
+  }
+
+  .box {
+    @include flex(row, center, center);
+    @media (max-width: 700px) {
+      @include flex(column, center, center);
+      text-align: center;
+    }
+    .earphones {
+      @media (max-width: 700px) {
+        max-width: 100%;
+      }
+    }
+    .box-div {
+      margin-left: 126px;
+
+      @media (max-width: 700px) {
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 30px;
+
+        width: 100%;
+      }
+
+      h5 {
+        @include h1($brown, 14px);
+        opacity: 0.75;
+        max-width: 349px;
+        @media (max-width: 700px) {
+          max-width: 100%;
+        }
+      }
+      h2 {
+        margin-top: 16px;
+        margin-bottom: 32px;
+        @media (max-width: 700px) {
+          margin-top: 24px;
+          margin-bottom: 24px;
+          font-size: 28px;
+        }
+        @include h1($black, 40px);
+      }
+      p {
+        @include p($black);
+        opacity: 0.75;
+        max-width: 349px;
+        margin-bottom: 40px;
+        @media (max-width: 700px) {
+          max-width: 100%;
+          font-size: 15px;
+        }
+      }
+      button {
+        @include button();
+        @media (max-width: 700px) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .box-cards {
+    margin-top: 159px;
+    width: 100%;
+
+    @include flex(row, space-between, center);
+    @media (max-width: 700px) {
+      @include flex(column, center, center);
+      gap: 68px;
+    }
+    .box-card {
+      border-radius: 8px;
+      width: 350px;
+
+      background-color: $grey;
+      height: 204px;
+      @include flex(column, center, center);
+      position: relative;
+
+      .box-images {
+        margin-top: -130px;
+        height: 159px;
+        width: 121px;
+        @media (max-width: 700px) {
+          margin-top: -79px;
+          height: 101px;
+          width: 85px;
+        }
+      }
+
+      h5 {
+        margin-bottom: 14px;
+        margin-top: 35px;
+      }
+      a {
+        color: #787878;
+        text-decoration: none;
+      }
+    }
+  }
+  .bot {
+    margin-top: 150px;
+    @include flex(row, center, center);
+    @media (max-width: 700px) {
+      @include flex(column-reverse, center, center);
+
+      text-align: center;
+    }
+    .bot-div {
+      margin-right: 120px;
+      @media (max-width: 700px) {
+        margin-right: 0px;
+      }
+      h2 {
+        @include h1($black);
+        .best {
+          color: $brown;
+        }
+        @media (max-width: 700px) {
+          margin-top: 32px;
+        }
+      }
+      p {
+        @include p($black);
+        opacity: 0.75;
+        margin-top: 32px;
+        @media (max-width: 700px) {
+          font-size: 15px;
+          max-width: 100%;
+        }
+      }
+    }
+    #gear {
+      border-radius: 8px;
+      @media (max-width: 700px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+footer {
+  padding: 76px 165px 47px 164px;
+  background-color: $light-black;
+
+  @media (max-width: 700px) {
+    padding: 57px 24px 38px 24px;
+  }
+  nav {
+    @include flex(row, space-between, center);
+    @media (max-width: 700px) {
+      @include flex(column, center, center);
+      gap: 48px;
+    }
+    ul {
+      @include flex();
+      gap: 34px;
+      list-style: none;
+      @media (max-width: 700px) {
+        @include flex(column, center, center);
+      }
+      li {
+        a {
+          text-decoration: none;
+          @include p($white);
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+  .footer {
+    gap: 466px;
+    margin-top: 36px;
+    @media (max-width: 700px) {
+      @include flex(column, center, center);
+      gap: 48px;
+      text-align: center;
+    }
+    @include flex(row, space-evenly, center);
+
+    .social {
+      gap: 16px;
+      @include flex();
+    }
+    p {
+      @include p($white);
+      margin-bottom: 56px;
+      opacity: 0.75;
+    }
+    span {
+      color: #fff;
+      font-weight: 700;
+      line-height: 25px;
+      font-size: 14px;
+      opacity: 0.74;
+    }
+  }
+}
